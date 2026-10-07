@@ -1,0 +1,12 @@
+
+*{box-sizing:border-box}body{margin:0;color:#111;background:#fff;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}img{display:block;width:100%}
+.top{min-height:100svh;display:grid;place-items:center;overflow:hidden}.top-frame{position:relative;width:min(100vw,calc(100svh * .7998));aspect-ratio:1638/2048}.top-frame>img{height:100%;object-fit:contain}
+.hotspot{position:absolute;z-index:2}.hotspot-megane{left:6%;top:77.5%;width:48%;height:4.8%}.hotspot-portrait{left:6%;top:82.2%;width:48%;height:4.8%}.hotspot-snap{left:6%;top:87%;width:48%;height:4.8%}.hotspot-instagram{left:84%;top:92.5%;width:9%;height:6%}
+.page{max-width:1400px;margin:auto;padding:22px 28px 80px}.nav{height:46px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd}.brand{font-size:12px;font-weight:bold;letter-spacing:.18em}.back{font-size:11px;letter-spacing:.14em}
+.hero{padding:55px 0 42px}.hero h1{margin:0;font-size:clamp(48px,8vw,100px);letter-spacing:.08em;line-height:.9}.hero p{margin:18px 0 0;color:#666;font-size:11px;letter-spacing:.2em}
+.gallery{display:grid;grid-template-columns:2fr 1fr;gap:12px}.landscape{grid-row:span 2;aspect-ratio:3/2;overflow:hidden}.portrait-stack{display:grid;gap:12px}.portrait{aspect-ratio:4/5;overflow:hidden}.gallery img{height:100%;object-fit:cover}
+.full-landscape{grid-column:1/-1;aspect-ratio:3/2;overflow:hidden;margin-top:12px}
+.note{max-width:560px;margin:70px 0 0}.note h2{font-size:11px;letter-spacing:.18em;margin:0 0 14px}.note p{font-size:13px;line-height:1.9;color:#555;margin:0}
+.footer{margin-top:80px;padding-top:18px;border-top:1px solid #ddd;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.15em}
+.viewer{position:fixed;inset:0;background:rgba(255,255,255,.98);display:none;place-items:center;z-index:20}.viewer.open{display:grid}.viewer img{max-width:94vw;max-height:92vh;width:auto}.close{position:fixed;top:12px;right:18px;background:none;border:0;font-size:34px}
+@media(max-width:700px){.page{padding:16px 10px 55px}.hero{padding:38px 0 28px}.gallery{display:block}.landscape,.portrait,.full-landscape{margin-bottom:8px}.landscape,.full-landscape{aspect-ratio:3/2}.portrait{aspect-ratio:4/5}.portrait-stack{display:block}.note{margin-top:50px}}
