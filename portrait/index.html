@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PORTRAIT - KENTARO YAMAMOTO</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        
+        <!-- 右上の三本線メニューボタン（全ページ共通） -->
+        <button id="menu-btn" class="menu-trigger" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- タップ後に全面に広がるメニュー画面（全ページ共通） -->
+        <div id="full-menu" class="overlay-menu">
+            <button id="close-btn" class="menu-close-btn">&times;</button>
+            <nav class="overlay-menu-nav">
+                <a href="../index.html">HOME</a>
+                <div class="nav-divider"></div>
+                <a href="../megane/index.html">MEGANE</a>
+                <div class="nav-divider"></div>
+                <a href="../portrait/index.html">PORTRAIT</a>
+                <div class="nav-divider"></div>
+                <a href="../snap/index.html">SNAP</a>
+            </nav>
+        </div>
+        
+        <main class="container">
+        <!-- 写真だけを並べるギャラリー -->
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-08658.JPG" alt="Portrait 1"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-08957.JPG" alt="Portrait 2"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09381.JPG" alt="Portrait 3"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09479.JPG" alt="Portrait 4"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09483.JPG" alt="Portrait 5"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09513.JPG" alt="Portrait 6"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09612.JPG" alt="Portrait 7"></div>
+                <div class="gallery-item"><img src="../images/portrait/kifi0317-09686.JPG" alt="Portrait 8"></div>
+            </div>
+        </section>
+        </main>
+        
+        <!-- 写真拡大用（左右めくりボタン内蔵ライトボックス） -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-btn">&times;</span>
+            <button id="lightbox-prev" class="lightbox-nav-btn">&lsaquo;</button>
+            <img class="lightbox-content" id="lightbox-img" alt="Enlarged Image">
+            <button id="lightbox-next" class="lightbox-nav-btn">&rsaquo;</button>
+        </div>
+        
+        <script src="../script.js"></script>
+    </body>
+</html>
