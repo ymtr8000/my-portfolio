@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SNAP - KENTARO YAMAMOTO</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        
+        <!-- 右上の三本線メニューボタン（全ページ共通） -->
+        <button id="menu-btn" class="menu-trigger" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- タップ後に全面に広がるメニュー画面（全ページ共通） -->
+        <div id="full-menu" class="overlay-menu">
+            <button id="close-btn" class="menu-close-btn">&times;</button>
+            <nav class="overlay-menu-nav">
+                <a href="../index.html">HOME</a>
+                <div class="nav-divider"></div>
+                <a href="../megane/index.html">MEGANE</a>
+                <div class="nav-divider"></div>
+                <a href="../portrait/index.html">PORTRAIT</a>
+                <div class="nav-divider"></div>
+                <a href="../snap/index.html">SNAP</a>
+            </nav>
+        </div>
+        
+        <main class="container">
+        <!-- 写真だけを並べるギャラリー（ここにあなたの写真が入ります） -->
+        <section class="gallery">
+            <div class="gallery-grid">
+                <!-- 💡 載せたい写真が決まったら、ここにコードを追加します -->
+                <div class="gallery-item"><img src="../images/snap/ここに画像名.jpg" alt="Snap 1"></div>
+            </div>
+        </section>
+        </main>
+        
+        <!-- 写真拡大用（ライトボックス） -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-btn">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+        
+        <script src="../script.js"></script>
+    </body>
+</html>
