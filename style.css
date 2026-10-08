@@ -1,0 +1,250 @@
+/* 基本設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* メニュー用の透明リンクの枠 */
+.transparent-menu {
+    position: absolute;
+    left: 8.5%;
+    bottom: 3.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.transparent-link {
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    width: 44vw;
+    max-width: 440px;
+    height: 6vh;
+    max-height: 60px;
+    cursor: pointer;
+}
+
+.instagram-link {
+    position: absolute;
+    right: 6%;
+    bottom: 4.5%;
+    display: block;
+    background: transparent;
+    width: 8vw;
+    max-width: 60px;
+    height: 8vw;
+    max-height: 60px;
+    cursor: pointer;
+}
+
+/* ハンバーガーボタン */
+.menu-trigger {
+    position: fixed;
+    top: 30px;
+    right: 4%;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease; 
+}
+
+.menu-trigger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #111111;
+}
+
+.menu-trigger.menu-hidden {
+    transform: translateY(-80px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 全面を覆うメニュー画面 */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 200;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-menu.active {
+    transform: translateY(0);
+}
+
+.overlay-menu-nav {
+    text-align: center;
+}
+
+.overlay-menu-nav a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.nav-divider {
+    width: 40px;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px auto;
+    opacity: 0.7;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 4%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* ギャラリーページ用設定 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item img:hover {
+    opacity: 0.8;
+}
+
+/* ★★★ 写真拡大（ライトボックス）新型デザイン設定 ★★★ */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* 高級感のある深い黒 */
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+    transition: src 0.2s ease;
+}
+
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 4%;
+    color: #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1010;
+    opacity: 0.7;
+}
+
+/* 左右の矢印ボタン（ミニマルな矢印デザイン） */
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 100;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 1010;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    user-select: none;
+}
+
+.lightbox-nav-btn:hover {
+    opacity: 1; /* マウスを乗せたらくっきり光る */
+}
+
+#lightbox-prev {
+    left: 2%;
+}
+
+#lightbox-next {
+    right: 2%;
+}
+
+/* スマホ縦画面の時は矢印を少し小さく、端に寄せる調整 */
+@media (max-width: 600px) {
+    .lightbox-nav-btn {
+        font-size: 2rem;
+        padding: 10px;
+    }
+    .lightbox-content {
+        max-width: 90%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8rem;
+    color: #999;
+}
+＿

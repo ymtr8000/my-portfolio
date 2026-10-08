@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KENTARO YAMAMOTO - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <!-- 右上の三本線メニューボタン -->
+        <button id="menu-btn" class="menu-trigger" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- タップ後に全面に広がるメニュー画面（見本のWixと同じ構成） -->
+        <div id="full-menu" class="overlay-menu">
+            <button id="close-btn" class="menu-close-btn">&times;</button>
+            <nav class="overlay-menu-nav">
+                <a href="index.html">HOME</a>
+                <div class="nav-divider"></div>
+                <a href="megane/index.html">MEGANE</a>
+                <div class="nav-divider"></div>
+                <a href="portrait/index.html">PORTRAIT</a>
+                <div class="nav-divider"></div>
+                <a href="snap/index.html">SNAP</a>
+            </nav>
+        </div>
+        
+        <main class="container">
+        <section class="hero-container">
+            <img src="images/top.jpg" alt="Top Image" class="hero-img">
+            
+            <!-- 写真内の文字の上の透明リンク（前回決めた位置もそのまま維持） -->
+            <div class="transparent-menu">
+                <a href="megane/index.html" class="transparent-link" title="MEGANE"></a>
+                <a href="portrait/index.html" class="transparent-link" title="PORTRAIT"></a>
+                <a href="snap/index.html" class="transparent-link" title="SNAP"></a>
+            </div>
+            
+            <!-- 右下のInstagramロゴの透明リンク -->
+            <a href="https://instagram.com" target="_blank" class="instagram-link" title="Instagram"></a>
+        </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 KENTARO YAMAMOTO.</p>
+        </footer>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
