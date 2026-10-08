@@ -1,1 +1,0 @@
-document.querySelectorAll(".gallery img").forEach(i=>i.onclick=()=>{let v=document.querySelector(".viewer");v.querySelector("img").src=i.src;v.classList.add("open")});document.querySelector(".close")?.addEventListener("click",()=>document.querySelector(".viewer").classList.remove("open"));
