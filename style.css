@@ -8,56 +8,64 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1000px; /* 画像の元の横幅に合わせます */
     margin: 0 auto;
     padding: 0;
 }
 
+/* ★★★ 重要：写真と透明リンクのズレを完全に防ぐ設定 ★★★ */
 .hero-container {
     position: relative;
     width: 100%;
-    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: inline-block; /* 縦長画面で写真の下に余白ができても、リンクの箱を写真の底辺にピタッと固定します */
 }
 
 .hero-img {
     width: 100%;
     height: auto;
-    max-width: 100%;
     display: block;
-    margin: 0 auto;
 }
 
-/* メニュー用の透明リンクの枠 */
+/* 透明リンクをまとめる枠（位置の基準をtopからの％に変更し、iPhone16に完全最適化） */
 .transparent-menu {
     position: absolute;
-    left: 8.5%;
-    bottom: 3.5%;
+    left: 8.5%;    /* 画像の左端からの位置 */
+    top: 83.5%;    /* 💡 bottomではなくtopからの位置にすることで、写真の縮小と完全に連動させます */
     display: flex;
     flex-direction: column;
-    gap: 1.5vh;
+    gap: 1.2vh;    /* 文字と文字の間の隙間 */
 }
 
+/* 透明なクリックボタンの設定 */
 .transparent-link {
     display: block;
     text-decoration: none;
-    background: transparent;
+    background: transparent; /* 完全に透明 */
+    
+    /* 文字と下線をすっぽり覆うクリック有効エリア */
     width: 44vw;
     max-width: 440px;
-    height: 6vh;
-    max-height: 60px;
+    height: 5vh;
+    max-height: 50px;
+    
     cursor: pointer;
 }
 
+/* 右下のInstagramロゴの透明リンク（こちらもtop基準に変更しズレを防止） */
 .instagram-link {
     position: absolute;
     right: 6%;
-    bottom: 4.5%;
+    top: 90%; /* 💡 top基準に変更 */
     display: block;
     background: transparent;
+    
     width: 8vw;
     max-width: 60px;
     height: 8vw;
     max-height: 60px;
+    
     cursor: pointer;
 }
 
@@ -167,7 +175,7 @@ body {
     opacity: 0.8;
 }
 
-/* ★★★ 写真拡大（ライトボックス）新型デザイン設定 ★★★ */
+/* 写真拡大（ライトボックス）設定 */
 .lightbox {
     display: none;
     position: fixed;
@@ -176,7 +184,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); /* 高級感のある深い黒 */
+    background-color: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
     user-select: none;
@@ -200,7 +208,6 @@ body {
     opacity: 0.7;
 }
 
-/* 左右の矢印ボタン（ミニマルな矢印デザイン） */
 .lightbox-nav-btn {
     position: absolute;
     top: 50%;
@@ -219,7 +226,7 @@ body {
 }
 
 .lightbox-nav-btn:hover {
-    opacity: 1; /* マウスを乗せたらくっきり光る */
+    opacity: 1;
 }
 
 #lightbox-prev {
@@ -230,7 +237,6 @@ body {
     right: 2%;
 }
 
-/* スマホ縦画面の時は矢印を少し小さく、端に寄せる調整 */
 @media (max-width: 600px) {
     .lightbox-nav-btn {
         font-size: 2rem;
@@ -247,4 +253,3 @@ footer {
     font-size: 0.8rem;
     color: #999;
 }
-＿
