@@ -27,7 +27,7 @@ body {
     display: block;
 }
 
-/* 🎯 画像に完全に吸い付くSVGの設定 */
+/* 画像に完全に吸い付くSVGの設定 */
 .svg-overlay {
     position: absolute;
     top: 0;
@@ -35,24 +35,21 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none; /* 下の画像への影響を防ぐ */
+    z-index: 10;          /* 三本線ボタンより奥に配置 */
 }
 
 .svg-overlay a {
     pointer-events: auto; /* リンク部分だけクリックを有効化 */
 }
 
-/* 💡テスト用設定：位置を確認するために、今は薄いピンク色にしています →透明にしたfill: transparent; */
+/* 透明リンクの設定（完全に透明に固定しました） */
 .clickable-area {
     fill: transparent; 
     stroke: none;
     cursor: pointer;
 }
 
-/* 🎯 位置が完全に合ったら、上の「fill: rgba(...);」を消して、下の「fill: transparent;」の先頭の「/*」と末尾の「*/」を削除してください */
-/* .clickable-area { fill: transparent; } */
-
-
-/* ハンバーガーボタン */
+/* ★★★ 右上の三本線ハンバーガーボタン（最前面に出るよう修正） ★★★ */
 .menu-trigger {
     position: fixed;
     top: 30px;
@@ -62,7 +59,7 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 100;
+    z-index: 10000 !important; /* 🎯 桁違いに大きい数字にして、SVGの膜よりも絶対に手前に引っ張り出します */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,9 +71,10 @@ body {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #111111;
+    background-color: #111111; /* 黒い三本線 */
 }
 
+/* 下スクロール時にボタンを画面の外（上）へ隠す設定 */
 .menu-trigger.menu-hidden {
     transform: translateY(-80px);
     opacity: 0;
@@ -91,7 +89,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #000000;
-    z-index: 200;
+    z-index: 20000 !important; /* メニュー画面をさらに手前に表示 */
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     display: flex;
@@ -162,7 +160,7 @@ body {
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 30000 !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -187,7 +185,7 @@ body {
     color: #ffffff;
     font-size: 40px;
     cursor: pointer;
-    z-index: 1010;
+    z-index: 30100;
     opacity: 0.7;
 }
 
@@ -202,7 +200,7 @@ body {
     font-weight: 100;
     cursor: pointer;
     padding: 20px;
-    z-index: 1010;
+    z-index: 30100;
     opacity: 0.4;
     transition: opacity 0.2s ease;
     user-select: none;
