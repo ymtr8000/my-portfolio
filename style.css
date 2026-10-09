@@ -41,9 +41,9 @@ body {
     pointer-events: auto; /* リンク部分だけクリックを有効化 */
 }
 
-/* 💡テスト用設定：位置を確認するために、今は薄いピンク色にしています */
+/* 💡テスト用設定：位置を確認するために、今は薄いピンク色にしています →透明にしたfill: transparent; */
 .clickable-area {
-    fill: rgba(255, 192, 203, 0.5); 
+    fill: transparent; 
     stroke: none;
     cursor: pointer;
 }
